@@ -17,41 +17,96 @@
 <body>
   <main>
     <h2 class="title">Contact Us</h2>
-    <form action="submit">
+    <div role="form">
       <div class="field">
         <label for="first-name" class="label">First Name</label>
-        <input type="text" name="firstName" id="first-name" placeholder="Enter your first name" aria-describedby="first-name-instruction" required>
+        <input 
+          type="text" 
+          name="firstName" 
+          id="first-name" 
+          placeholder="Enter your first name" 
+          aria-describedby="first-name-instruction" 
+          required
+          aria-invalid="false"
+          aria-errormessage="first-name-error">
         <span id="first-name-error" class="error-message">This field is required</span>
       </div>
       <div class="field">
         <label for="last-name" class="label">Last Name</label>
-        <input type="text" name="lastName" id="last-name" placeholder="Enter your last name" aria-describedby="last-name-instruction" required>
+        <input 
+          type="text" 
+          name="lastName" 
+          id="last-name" 
+          placeholder="Enter your last name" 
+          aria-describedby="last-name-instruction" 
+          required
+          aria-invalid="false"
+          aria-errormessage="last-name-error">
         <span id="last-name-error" class="error-message">This field is required</span>
       </div>
       <div class="field">
         <label for="email" class="label">Email Address</label>
-        <input type="email" name="email" id="email" placeholder="Enter your email" aria-describedby="email-instruction" required>
+        <input 
+          type="email" 
+          name="email" 
+          id="email" 
+          placeholder="Enter your email" 
+          aria-describedby="email-instruction" 
+          required
+          aria-invalid="false"
+          aria-errormessage="email-error">
         <span id="email-error" class="error-message">Please enter a valid email address</span>
       </div>
       <div class="field">
-        <fieldset class="radiogroup">
-          <legend class="legend">Query Type</legend>
-          <input type="radio" name="generalEnquiry" id="general-enquiry" class="radio-field" aria-describedby="general-enquiry-instruction" required>General Enquiry</input>
-          <input type="radio" name="supportRequest" id="support-request" class="radio-field" aria-describedby="support-request-instruction" required>Support Request</input>
-        </fieldset>
+        <div role="radiogroup" class="radiogroup">
+          <label class="label">Query Type</label>
+          <input 
+            type="radio" 
+            name="generalEnquiry" 
+            id="general-enquiry" 
+            class="radio-field" 
+            aria-describedby="general-enquiry-instruction" 
+            required
+            aria-invalid="false"
+            aria-errormessage="query-error">General Enquiry</input>
+          <input 
+            type="radio" 
+            name="supportRequest" 
+            id="support-request" 
+            class="radio-field" 
+            aria-describedby="support-request-instruction" 
+            required
+            aria-invalid="false"
+            aria-errormessage="query-error">Support Request</input>
+        </div>
         <span id="query-error" class="error-message">Please select a query type</span>
       </div>
       <div class="field">
         <label for="message" class="label">Message</label>
-        <textarea name="messageTextarea" id="message" class="message-field" aria-describedby="message-instruction" required></textarea>
+        <textarea 
+          name="messageTextarea" 
+          id="message" 
+          class="message-field" 
+          aria-describedby="message-instruction" 
+          required
+          aria-invalid="false"
+          aria-errormessage="message-error"></textarea>
         <span id="message-error" class="error-message">This field is required</span>
       </div>
       <div class="field">
-        <input type="checkbox" id="consent" name="consentCheckbox" class="checkbox-field" aria-describedby="consent-instruction" required>I consent to being contacted by the team</input>
+        <input 
+          type="checkbox" 
+          id="consent" 
+          name="consentCheckbox" 
+          class="checkbox-field" 
+          aria-describedby="consent-instruction" 
+          required
+          aria-invalid="false"
+          aria-errormessage="consent-error">I consent to being contacted by the team</input>
         <span id="consent-error" class="error-messsage">To submit this form, please consent to being contacted</span>
       </div>
       <button class="btn">Submit</button>
-    </form>
+    </div>
     <div class="alert-container">
       <h2 class="alert-title">Message Sent!</h2>
       <p class="thanks-message">Thanks for completing the form. We'll be in touch soon!</p>
