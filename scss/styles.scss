@@ -38,7 +38,7 @@ body {
         }
     }
 
-    header[aria-hidden="false"] {
+    header[aria-hidden="true"] {
         display: none;
     }
 
@@ -126,10 +126,12 @@ body {
                             gap: 1rem;
                             padding: .75rem 2rem;
                             border-radius: 10px;
+                            display: flex;
 
                             input {
                                 font-size: 2rem;
-                                
+                                accent-color: $clr-green-600;
+                                width: 1rem;
                             }
 
                             label {
@@ -138,6 +140,10 @@ body {
                                 font-weight: $bold-weight;
                             }
                         }
+                        
+                        .radio-field:where(:active, :focus, :focus-within) {
+                            background-color: $clr-green-200;
+                        }
                     }
                 }
 
@@ -145,6 +151,13 @@ body {
                     width: 100%;
                     height: 200px;
                     border-radius: 10px;
+                    border: 1px solid $clr-grey-500;
+                    padding: 1rem;
+                    outline: none;
+                }
+
+                textarea:where(:focus, :active, :focus-within) {
+                    border: 1px solid $clr-green-600;
                 }
 
                 textarea[aria-invalid="true"] {

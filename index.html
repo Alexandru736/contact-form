@@ -6,6 +6,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
 
   <title>Frontend Mentor | Contact form</title>
 
@@ -35,6 +36,7 @@
             id="first-name"
             placeholder="Enter your first name"
             aria-describedby="first-name-instruction"
+            value=""
             required
             aria-invalid="false"
             aria-errormessage="first-name-error">
@@ -48,6 +50,7 @@
             id="last-name"
             placeholder="Enter your last name"
             aria-describedby="last-name-instruction"
+            value=""
             required
             aria-invalid="false"
             aria-errormessage="last-name-error">
@@ -74,9 +77,10 @@
             <div class="radio-field">
               <input
                 type="radio"
-                name="generalEnquiry"
+                name="query-radio"
                 id="general-enquiry"
                 value="General Enquiry"
+                class="radio-btn"
                 aria-describedby="general-enquiry-instruction"
                 required
                 aria-invalid="false"
@@ -87,9 +91,10 @@
             <div class="radio-field">
               <input
                 type="radio"
-                name="supportRequest"
+                name="query-radio"
                 id="support-request"
                 value="Support Request"
+                class="radio-btn"
                 aria-describedby="support-request-instruction"
                 required
                 aria-invalid="false"
