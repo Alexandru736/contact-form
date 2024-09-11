@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="css/styles.css">
+
   <title>Frontend Mentor | Contact form</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -15,37 +16,46 @@
   </style>
 </head>
 <body>
+  <header role="alert" class="alert-container" aria-hidden="true">
+    <div class="title">
+      <img src="assets/images/icon-success-check.svg" alt="">
+      <h2 class="alert-title">Message Sent!</h2>
+    </div>
+    <p class="thanks-message">Thanks for completing the form. We'll be in touch soon!</p>
+  </header>
   <main>
     <h2 class="title">Contact Us</h2>
-    <div role="form">
-      <div class="field">
-        <label for="first-name" class="label">First Name</label>
-        <input 
-          type="text" 
-          name="firstName" 
-          id="first-name" 
-          placeholder="Enter your first name" 
-          aria-describedby="first-name-instruction" 
-          required
-          aria-invalid="false"
-          aria-errormessage="first-name-error">
-        <span id="first-name-error" class="error-message">This field is required</span>
+    <div role="form" class="form">
+      <div class="name">
+        <div class="field">
+          <label for="first-name" class="label">First Name  <span class="required-asterisk">*</span></label>
+          <input
+            type="text"
+            name="firstName"
+            id="first-name"
+            placeholder="Enter your first name"
+            aria-describedby="first-name-instruction"
+            required
+            aria-invalid="false"
+            aria-errormessage="first-name-error">
+          <span id="first-name-error" class="error-message" aria-hidden="true">This field is required</span>
+        </div>
+        <div class="field">
+          <label for="last-name" class="label">Last Name  <span class="required-asterisk">*</span></label>
+          <input
+            type="text"
+            name="lastName"
+            id="last-name"
+            placeholder="Enter your last name"
+            aria-describedby="last-name-instruction"
+            required
+            aria-invalid="false"
+            aria-errormessage="last-name-error">
+          <span id="last-name-error" class="error-message" aria-hidden="true">This field is required</span>
+        </div>
       </div>
       <div class="field">
-        <label for="last-name" class="label">Last Name</label>
-        <input 
-          type="text" 
-          name="lastName" 
-          id="last-name" 
-          placeholder="Enter your last name" 
-          aria-describedby="last-name-instruction" 
-          required
-          aria-invalid="false"
-          aria-errormessage="last-name-error">
-        <span id="last-name-error" class="error-message">This field is required</span>
-      </div>
-      <div class="field">
-        <label for="email" class="label">Email Address</label>
+        <label for="email" class="label">Email Address  <span class="required-asterisk">*</span></label>
         <input 
           type="email" 
           name="email" 
@@ -55,34 +65,43 @@
           required
           aria-invalid="false"
           aria-errormessage="email-error">
-        <span id="email-error" class="error-message">Please enter a valid email address</span>
+        <span id="email-error" class="error-message" aria-hidden="true">Please enter a valid email address</span>
       </div>
       <div class="field">
         <div role="radiogroup" class="radiogroup">
-          <label class="label">Query Type</label>
-          <input 
-            type="radio" 
-            name="generalEnquiry" 
-            id="general-enquiry" 
-            class="radio-field" 
-            aria-describedby="general-enquiry-instruction" 
-            required
-            aria-invalid="false"
-            aria-errormessage="query-error">General Enquiry</input>
-          <input 
-            type="radio" 
-            name="supportRequest" 
-            id="support-request" 
-            class="radio-field" 
-            aria-describedby="support-request-instruction" 
-            required
-            aria-invalid="false"
-            aria-errormessage="query-error">Support Request</input>
+          <label class="label">Query Type  <span class="required-asterisk">*</span></label>
+          <div class="radiobuttons">
+            <div class="radio-field">
+              <input
+                type="radio"
+                name="generalEnquiry"
+                id="general-enquiry"
+                value="General Enquiry"
+                aria-describedby="general-enquiry-instruction"
+                required
+                aria-invalid="false"
+                aria-errormessage="query-error">
+                <label for="general-enquiry">General Enquiry</label>
+            </div>
+            
+            <div class="radio-field">
+              <input
+                type="radio"
+                name="supportRequest"
+                id="support-request"
+                value="Support Request"
+                aria-describedby="support-request-instruction"
+                required
+                aria-invalid="false"
+                aria-errormessage="query-error">
+                <label for="support-request">Support Request</label>
+            </div>
+          </div>
         </div>
-        <span id="query-error" class="error-message">Please select a query type</span>
+        <span id="query-error" class="error-message" aria-hidden="true">Please select a query type</span>
       </div>
       <div class="field">
-        <label for="message" class="label">Message</label>
+        <label for="message" class="label">Message  <span class="required-asterisk">*</span></label>
         <textarea 
           name="messageTextarea" 
           id="message" 
@@ -91,31 +110,32 @@
           required
           aria-invalid="false"
           aria-errormessage="message-error"></textarea>
-        <span id="message-error" class="error-message">This field is required</span>
+        <span id="message-error" class="error-message" aria-hidden="true">This field is required</span>
       </div>
       <div class="field">
-        <input 
-          type="checkbox" 
-          id="consent" 
-          name="consentCheckbox" 
-          class="checkbox-field" 
-          aria-describedby="consent-instruction" 
-          required
-          aria-invalid="false"
-          aria-errormessage="consent-error">I consent to being contacted by the team</input>
-        <span id="consent-error" class="error-messsage">To submit this form, please consent to being contacted</span>
+        <label class="checkbox">
+          <input
+            type="checkbox"
+            id="consent"
+            name="consentCheckbox"
+            aria-describedby="consent-instruction"
+            required
+            aria-invalid="false"
+            aria-errormessage="consent-error">
+              <span>I consent to being contacted by the team  
+                <span class="required-asterisk">*</span>
+              </span>
+          </input>
+        </label>
+        <span id="consent-error" class="error-message" aria-hidden="true">To submit this form, please consent to being contacted</span>
       </div>
       <button class="btn">Submit</button>
-    </div>
-    <div class="alert-container">
-      <h2 class="alert-title">Message Sent!</h2>
-      <p class="thanks-message">Thanks for completing the form. We'll be in touch soon!</p>
     </div>
   </main>
   
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="https://github.com/Alexandru736/contact-form">Alex Ionita</a>.
   </footer>
 </body>
 </html>
