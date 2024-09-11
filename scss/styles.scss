@@ -140,6 +140,10 @@ body {
                                 font-weight: $bold-weight;
                             }
                         }
+
+                        .radio-field[aria-invalid="true"] {
+                            border: 1px solid $clr-red;
+                        }
                         
                         .radio-field:where(:active, :focus, :focus-within) {
                             background-color: $clr-green-200;

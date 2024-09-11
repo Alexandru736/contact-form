@@ -17,7 +17,7 @@
   </style>
 </head>
 <body>
-  <header role="alert" class="alert-container" aria-hidden="true">
+  <header class="alert-container" aria-hidden="true">
     <div class="title">
       <img src="assets/images/icon-success-check.svg" alt="">
       <h2 class="alert-title">Message Sent!</h2>
@@ -25,17 +25,17 @@
     <p class="thanks-message">Thanks for completing the form. We'll be in touch soon!</p>
   </header>
   <main>
-    <h2 class="title">Contact Us</h2>
+    <h1 class="title">Contact Us</h1>
     <div role="form" class="form">
       <div class="name">
         <div class="field">
-          <label for="first-name" class="label">First Name  <span class="required-asterisk">*</span></label>
+          <label id="first-name-label" for="first-name" class="label">First Name  <span class="required-asterisk">*</span></label>
           <input
             type="text"
             name="firstName"
             id="first-name"
             placeholder="Enter your first name"
-            aria-describedby="first-name-instruction"
+            aria-describedby="first-name-label"
             value=""
             required
             aria-invalid="false"
@@ -43,13 +43,13 @@
           <span id="first-name-error" class="error-message" aria-hidden="true">This field is required</span>
         </div>
         <div class="field">
-          <label for="last-name" class="label">Last Name  <span class="required-asterisk">*</span></label>
+          <label id="last-name-label" for="last-name" class="label">Last Name  <span class="required-asterisk">*</span></label>
           <input
             type="text"
             name="lastName"
             id="last-name"
             placeholder="Enter your last name"
-            aria-describedby="last-name-instruction"
+            aria-describedby="last-name-label"
             value=""
             required
             aria-invalid="false"
@@ -58,13 +58,13 @@
         </div>
       </div>
       <div class="field">
-        <label for="email" class="label">Email Address  <span class="required-asterisk">*</span></label>
+        <label id="email-label" for="email" class="label">Email Address  <span class="required-asterisk">*</span></label>
         <input 
           type="email" 
           name="email" 
           id="email" 
           placeholder="Enter your email" 
-          aria-describedby="email-instruction" 
+          aria-describedby="email-label" 
           required
           aria-invalid="false"
           aria-errormessage="email-error">
@@ -72,32 +72,29 @@
       </div>
       <div class="field">
         <div role="radiogroup" class="radiogroup">
-          <label class="label">Query Type  <span class="required-asterisk">*</span></label>
+          <label id="radiogroup-label" class="label">Query Type  <span class="required-asterisk">*</span></label>
           <div class="radiobuttons">
-            <div class="radio-field">
+            <div class="radio-field" aria-invalid="false">
               <input
                 type="radio"
                 name="query-radio"
                 id="general-enquiry"
                 value="General Enquiry"
                 class="radio-btn"
-                aria-describedby="general-enquiry-instruction"
+                aria-describedby="radiogroup-label"
                 required
-                aria-invalid="false"
                 aria-errormessage="query-error">
                 <label for="general-enquiry">General Enquiry</label>
             </div>
-            
-            <div class="radio-field">
+            <div class="radio-field" aria-invalid="false">
               <input
                 type="radio"
                 name="query-radio"
                 id="support-request"
                 value="Support Request"
                 class="radio-btn"
-                aria-describedby="support-request-instruction"
+                aria-describedby="radiogroup-label"
                 required
-                aria-invalid="false"
                 aria-errormessage="query-error">
                 <label for="support-request">Support Request</label>
             </div>
@@ -106,24 +103,24 @@
         <span id="query-error" class="error-message" aria-hidden="true">Please select a query type</span>
       </div>
       <div class="field">
-        <label for="message" class="label">Message  <span class="required-asterisk">*</span></label>
+        <label id="message-label" for="message" class="label">Message  <span class="required-asterisk">*</span></label>
         <textarea 
           name="messageTextarea" 
           id="message" 
           class="message-field" 
-          aria-describedby="message-instruction" 
+          aria-describedby="message-label" 
           required
           aria-invalid="false"
           aria-errormessage="message-error"></textarea>
         <span id="message-error" class="error-message" aria-hidden="true">This field is required</span>
       </div>
       <div class="field">
-        <label class="checkbox">
+        <label id="consent-label" class="checkbox">
           <input
             type="checkbox"
             id="consent"
             name="consentCheckbox"
-            aria-describedby="consent-instruction"
+            aria-describedby="consent-label"
             required
             aria-invalid="false"
             aria-errormessage="consent-error">
