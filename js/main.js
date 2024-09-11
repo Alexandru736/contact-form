@@ -21,6 +21,7 @@ const emailError = document.getElementById('email-error');
 const queryError = document.getElementById('query-error');
 const messageError = document.getElementById('message-error');
 const consentError = document.getElementById('consent-error');
+const radioFieldList = document.querySelectorAll('.radio-field');
 
 submitButton.addEventListener('click', () => submitEvent());
 
@@ -48,9 +49,11 @@ function validateFields() {
 function validateFirstName() {
 
     if(firstName.value === "") {
+        firstName.setAttribute('aria-invalid', 'true');
         firstNameError.setAttribute('aria-hidden', 'false');
         return false;
     }
+    firstName.setAttribute('aria-invalid', 'false');
     firstNameError.setAttribute('aria-hidden', 'true');
     return true;
 }
@@ -58,18 +61,22 @@ function validateFirstName() {
 function validateLastName() {
 
     if(lastName.value === "") {
+        lastName.setAttribute('aria-invalid', 'true');
         lastNameError.setAttribute('aria-hidden', 'false');
         return false;
     }
+    lastName.setAttribute('aria-invalid', 'false');
     lastNameError.setAttribute('aria-hidden', 'true');
     return true;
 }
 
 function validateEmail() {
     if(email.value === '') {
+        email.setAttribute('aria-invalid', 'true');
         emailError.setAttribute('aria-hidden', 'false');
         return false;
     }
+    email.setAttribute('aria-invalid', 'false');
     emailError.setAttribute('aria-hidden', 'true');
     return true;
 }
@@ -78,27 +85,42 @@ function validateQueryType() {
     
     const checkedList = radioButtonList.filter((radioButton) => radioButton.checked === true);
     if (!checkedList.length) {
+        radioButtonList.forEach((radioButton, index) => {
+            if(!checkedList.includes(radioButton)) {
+                radioFieldList[index].setAttribute('aria-invalid', 'true');
+            }
+        });
         queryError.setAttribute('aria-hidden', 'false');
         return false;
     }
+    radioButtonList.forEach(radioButton => {
+        radioButton.setAttribute('aria-invalid', 'false');
+    });
+    radioFieldList.forEach(radioField => {
+        radioField.setAttribute('aria-invalid', 'false');
+    });
     queryError.setAttribute('aria-hidden', 'true');
     return true;
 }
 
 function validateMessage(){
     if(message.value === '') {
+        message.setAttribute('aria-invalid', 'true');
         messageError.setAttribute('aria-hidden', 'false');
         return false;
     }
+    message.setAttribute('aria-invalid', 'false');
     messageError.setAttribute('aria-hidden', 'true');
     return true;
 }
 
 function validateConsent() {
     if(!consentCheckbox.checked) {
+        consentCheckbox.setAttribute('aria-invalid', 'true');
         consentError.setAttribute('aria-hidden', 'false');
         return false;
     }
+    consentCheckbox.setAttribute('aria-invalid', 'false');
     consentError.setAttribute('aria-hidden', 'true');
     return true;
 }

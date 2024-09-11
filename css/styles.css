@@ -138,6 +138,9 @@ body main .form .field .radiogroup .radiobuttons .radio-field label {
   color: hsl(186, 15%, 59%);
   font-weight: 700;
 }
+body main .form .field .radiogroup .radiobuttons .radio-field[aria-invalid=true] {
+  border: 1px solid hsl(0, 66%, 54%);
+}
 body main .form .field .radiogroup .radiobuttons .radio-field:where(:active, :focus, :focus-within) {
   background-color: hsl(148, 38%, 91%);
 }
