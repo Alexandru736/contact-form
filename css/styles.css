@@ -48,7 +48,7 @@ body header .title .alert-title {
 body header .thanks-message {
   color: hsl(148, 38%, 91%);
 }
-body header[aria-hidden=false] {
+body header[aria-hidden=true] {
   display: none;
 }
 body main {
@@ -126,19 +126,31 @@ body main .form .field .radiogroup .radiobuttons .radio-field {
   gap: 1rem;
   padding: 0.75rem 2rem;
   border-radius: 10px;
+  display: flex;
 }
 body main .form .field .radiogroup .radiobuttons .radio-field input {
   font-size: 2rem;
+  accent-color: hsl(169, 82%, 27%);
+  width: 1rem;
 }
 body main .form .field .radiogroup .radiobuttons .radio-field label {
   font-size: 1.2rem;
   color: hsl(186, 15%, 59%);
   font-weight: 700;
 }
+body main .form .field .radiogroup .radiobuttons .radio-field:where(:active, :focus, :focus-within) {
+  background-color: hsl(148, 38%, 91%);
+}
 body main .form .field textarea {
   width: 100%;
   height: 200px;
   border-radius: 10px;
+  border: 1px solid hsl(186, 15%, 59%);
+  padding: 1rem;
+  outline: none;
+}
+body main .form .field textarea:where(:focus, :active, :focus-within) {
+  border: 1px solid hsl(169, 82%, 27%);
 }
 body main .form .field textarea[aria-invalid=true] {
   border: 1px solid hsl(0, 66%, 54%);
